@@ -9,3 +9,9 @@ This repository preserves the complete contents of the published
 
 `PUBLICATION.md` is the only added file. Paths inside the VSIX are preserved.
 The extension license and notices are included in `extension/`.
+
+## Links
+
+- [Lispex documentation](https://www.lispex.com/en/docs)
+- [Lispex on the VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=studiohaze.lispex)
+- [Lispex on Open VSX](https://open-vsx.org/extension/studiohaze/lispex)
