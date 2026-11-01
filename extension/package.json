@@ -1,0 +1,89 @@
+{
+  "name": "lispex",
+  "displayName": "Lispex",
+  "description": "Lispex syntax highlighting, file icons, and formatting through the installed Native CLI.",
+  "version": "0.2.0",
+  "publisher": "studiohaze",
+  "author": "Studio Haze Inc.",
+  "license": "Apache-2.0",
+  "icon": "icon.png",
+  "homepage": "https://www.lispex.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/clavef/lispex.git"
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onLanguage:lispex"
+  ],
+  "extensionKind": [
+    "workspace"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": false
+    },
+    "virtualWorkspaces": {
+      "supported": false
+    }
+  },
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "lispex",
+    "lspx",
+    "scheme",
+    "lisp",
+    "r7rs"
+  ],
+  "scripts": {
+    "test": "node --test test/formatter-client.test.mjs"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "lispex",
+        "aliases": [
+          "Lispex",
+          "lispex"
+        ],
+        "extensions": [
+          ".lspx"
+        ],
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icon.png",
+          "dark": "./icon.png"
+        }
+      }
+    ],
+    "grammars": [
+      {
+        "language": "lispex",
+        "scopeName": "source.lispex",
+        "path": "./syntaxes/lispex.tmLanguage.json"
+      }
+    ],
+    "configuration": {
+      "title": "Lispex",
+      "properties": {
+        "lispex.format.executable": {
+          "type": "string",
+          "default": "lispex",
+          "description": "Path to the installed Native Lispex executable used for document formatting."
+        },
+        "lispex.format.timeoutMs": {
+          "type": "number",
+          "default": 10000,
+          "minimum": 1000,
+          "maximum": 60000,
+          "description": "Maximum time in milliseconds allowed for one Lispex formatting request."
+        }
+      }
+    }
+  }
+}

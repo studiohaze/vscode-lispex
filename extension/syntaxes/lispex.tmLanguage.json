@@ -1,0 +1,72 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Lispex",
+  "scopeName": "source.lispex",
+  "fileTypes": ["lspx"],
+  "patterns": [
+    { "include": "#comment" },
+    { "include": "#quote" },
+    { "include": "#string" },
+    { "include": "#char" },
+    { "include": "#boolean" },
+    { "include": "#number" },
+    { "include": "#special-form" },
+    { "include": "#operator" },
+    { "include": "#builtin" }
+  ],
+  "repository": {
+    "comment": {
+      "patterns": [
+        { "name": "comment.line.semicolon.lispex", "match": ";.*$" },
+        {
+          "name": "comment.block.lispex",
+          "begin": "#\\|",
+          "end": "\\|#",
+          "patterns": [{ "include": "#comment" }]
+        }
+      ]
+    },
+    "quote": {
+      "patterns": [
+        { "name": "punctuation.definition.quasiquote.lispex", "match": "`" },
+        { "name": "punctuation.definition.unquote.lispex", "match": ",@|," },
+        { "name": "punctuation.definition.quote.lispex", "match": "'" }
+      ]
+    },
+    "string": {
+      "name": "string.quoted.double.lispex",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.lispex",
+          "match": "\\\\(x[0-9A-Fa-f]+;|[abtnrv0\"\\\\]|\\n)"
+        }
+      ]
+    },
+    "char": {
+      "name": "constant.character.lispex",
+      "match": "#\\\\(x[0-9A-Fa-f]+|alarm|backspace|delete|escape|newline|null|return|space|tab|.)"
+    },
+    "boolean": {
+      "name": "constant.language.boolean.lispex",
+      "match": "(?<![^\\s()\\[\\]{}|\"';])(#t|#f|#true|#false)(?![^\\s()\\[\\]{}|\"';])"
+    },
+    "number": {
+      "name": "constant.numeric.lispex",
+      "match": "(?<![^\\s()\\[\\]{}|\"';])-?(\\d+/\\d+|\\d+\\.\\d+([eE][+-]?\\d+)?|\\d+[eE][+-]?\\d+|\\d+)(?![^\\s()\\[\\]{}|\"';])"
+    },
+    "special-form": {
+      "name": "keyword.control.lispex",
+      "match": "(?<![^\\s()\\[\\]{}|\"';])(define-values|define|lambda|letrec|let\\*-values|let-values|let\\*|let|if|cond|case|when|unless|and|or|begin|do|quasiquote|quote|unquote-splicing|unquote|set!|else|=>)(?![^\\s()\\[\\]{}|\"';])"
+    },
+    "operator": {
+      "name": "keyword.operator.lispex",
+      "match": "(?<![^\\s()\\[\\]{}|\"';])(<=|>=|=|<|>|\\+|-|\\*|/)(?![^\\s()\\[\\]{}|\"';])"
+    },
+    "builtin": {
+      "name": "support.function.builtin.lispex",
+      "match": "(?<![^\\s()\\[\\]{}|\"';])(call-with-current-continuation|call/cc|call-with-values|dynamic-wind|with-exception-handler|values|apply|map|for-each|filter|fold-left|fold-right|reduce|vector-map|vector-for-each|string-map|string-for-each|car|cdr|caar|cadr|cdar|cddr|cons|list|list\\?|pair\\?|null\\?|length|append|reverse|list-tail|list-ref|list-copy|make-list|member|memq|memv|assoc|assq|assv|first|rest|nth|last|eq\\?|eqv\\?|equal\\?|not|boolean\\?|boolean=\\?|number\\?|integer\\?|rational\\?|real\\?|complex\\?|exact\\?|inexact\\?|exact-integer\\?|nan\\?|infinite\\?|finite\\?|zero\\?|positive\\?|negative\\?|odd\\?|even\\?|symbol\\?|string\\?|char\\?|vector\\?|procedure\\?|eof-object\\?|eof-object|abs|min|max|quotient|remainder|modulo|gcd|lcm|expt|exact|inexact|floor|ceiling|round|truncate|square|number->string|string->number|char->integer|integer->char|char-upcase|char-downcase|char-alphabetic\\?|char-numeric\\?|char-whitespace\\?|char-upper-case\\?|char-lower-case\\?|string-length|string-ref|substring|string-append|string->list|list->string|string-copy|string->symbol|symbol->string|make-string|string|string-upcase|string-downcase|string-contains|string-split|make-vector|vector|vector-length|vector-ref|vector-set!|vector->list|list->vector|vector-fill!|vector-copy|display|write|newline|println|error|raise|make-parameter)(?![^\\s()\\[\\]{}|\"';])"
+    }
+  }
+}
