@@ -1,14 +1,16 @@
 # Published extension mirror
 
 This repository preserves the complete contents of the published
-`studiohaze.lispex` version `0.2.0` VSIX unchanged.
+`studiohaze.lispex` version `0.2.1` VSIX unchanged.
 
-- Source VSIX: https://open-vsx.org/api/studiohaze/lispex/0.2.0/file/studiohaze.lispex-0.2.0.vsix
-- SHA-256: `6a5da98ed46cd181c12bb1686a9e709a696b7152f76ca99d24bad03ba2ac3a07`
-- Version: `0.2.0`
+- Source VSIX: https://open-vsx.org/api/studiohaze/lispex/0.2.1/file/studiohaze.lispex-0.2.1.vsix
+- SHA-256: `fb8911f6b9733ba04230f56d622a80d0dd54ca7281ff328979152993743aac41`
+- Version: `0.2.1`
 
 `PUBLICATION.md` is the only added file. Paths inside the VSIX are preserved.
 The extension license and notices are included in `extension/`.
+`extension/LICENSE.txt`, `extension/NOTICE` and `extension/language-configuration.json`
+carry CRLF line endings exactly as published.
 
 ## Links
 

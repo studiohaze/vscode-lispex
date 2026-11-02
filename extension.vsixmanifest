@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 	<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
 		<Metadata>
-			<Identity Language="en-US" Id="lispex" Version="0.2.0" Publisher="studiohaze" />
+			<Identity Language="en-US" Id="lispex" Version="0.2.1" Publisher="studiohaze" />
 			<DisplayName>Lispex</DisplayName>
 			<Description xml:space="preserve">Lispex syntax highlighting, file icons, and formatting through the installed Native CLI.</Description>
 			<Tags>lispex,lspx,scheme,lisp,r7rs,Lispex,__ext_lspx</Tags>

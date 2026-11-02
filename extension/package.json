@@ -2,7 +2,7 @@
   "name": "lispex",
   "displayName": "Lispex",
   "description": "Lispex syntax highlighting, file icons, and formatting through the installed Native CLI.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "publisher": "studiohaze",
   "author": "Studio Haze Inc.",
   "license": "Apache-2.0",

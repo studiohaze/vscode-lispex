@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.1
+
+- The extension details now introduce Lispex as a safe language for business
+  rules. Highlighting, file recognition, icons and formatting are unchanged.
+
 ## 0.2.0
 
 - Added Format Document and format-on-save support through an installed Native

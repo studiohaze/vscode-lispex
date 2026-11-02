@@ -1,6 +1,6 @@
 # Lispex for Visual Studio Code and Open VSX
 
-Editor support for the [Lispex](https://www.lispex.com) language:
+Editor support for [Lispex](https://www.lispex.com), a safe language for business rules:
 
 - `.lspx` file recognition;
 - Lispex syntax highlighting;
