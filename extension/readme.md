@@ -4,15 +4,17 @@ Editor support for [Lispex](https://www.lispex.com), a safe language for busines
 
 - `.lspx` file recognition;
 - Lispex syntax highlighting;
-- the Lispex file icon in both light and dark editor themes; and
-- Format Document support through the installed Native `lispex fmt` command.
+- the Lispex file icon in both light and dark editor themes;
+- errors as you type and document formatting;
+- symbols and go to definition; and
+- completion and hover for built-ins.
 
-The extension does not bundle a runtime or language server. Install the Native
-Lispex CLI, make `lispex` available on `PATH`, then use **Format Document** or
-format-on-save. If the executable lives elsewhere, set
-`lispex.format.executable` to its path. Formatting preserves comments and
-literal spellings and reports invalid source without changing the document.
-Autocomplete, hover information, and editor diagnostics are not included.
+Install [Native Lispex 1.21.2 or later](https://www.lispex.com/v1.21/en/docs/classic/installation)
+and open a `.lspx` file. The extension starts `lispex lsp` over stdio.
+Make `lispex` available on `PATH`, or set `lispex.path` to the executable's
+full path. Reload the VS Code window after changing the path.
+Existing `lispex.format.executable` settings also select the executable
+when `lispex.path` is not set.
 
 ## Install
 
@@ -39,11 +41,15 @@ extension does not highlight those spellings as supported syntax.
 
 ## Formatting
 
-The editor sends the current document to `lispex fmt -` without a shell and
-uses stdout only after the command succeeds. The default timeout is ten
-seconds; `lispex.format.timeoutMs` can set a value from 1,000 to 60,000 ms.
-Formatting is a Native CLI feature. The npm runtime, browser WASM, and
-Playground do not provide it.
+Use **Format Document** or enable format-on-save. The language server formats
+the document, preserving comments and literal spellings. Invalid source stays
+unchanged.
+
+If the installed executable is older than 1.21.2 or the language server cannot
+start, the extension shows an installation link. It then uses `lispex fmt -`
+for formatting when that command is available. This CLI formatter has a default
+timeout of ten seconds. Set `lispex.format.timeoutMs` from 1,000 to 60,000 ms
+to change it. Both formatting routes use the installed Native executable.
 
 ## License
 

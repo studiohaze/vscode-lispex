@@ -1,8 +1,8 @@
 {
   "name": "lispex",
   "displayName": "Lispex",
-  "description": "Lispex syntax highlighting, file icons, and formatting through the installed Native CLI.",
-  "version": "0.2.1",
+  "description": "Lispex errors as you type, formatting, symbols, definitions, and built-in completion and hover.",
+  "version": "0.3.0",
   "publisher": "studiohaze",
   "author": "Studio Haze Inc.",
   "license": "Apache-2.0",
@@ -12,7 +12,7 @@
     "type": "git",
     "url": "https://github.com/clavef/lispex.git"
   },
-  "main": "./extension.js",
+  "main": "./dist/extension.js",
   "activationEvents": [
     "onLanguage:lispex"
   ],
@@ -41,7 +41,10 @@
     "r7rs"
   ],
   "scripts": {
-    "test": "node --test test/formatter-client.test.mjs"
+    "test": "node --test test/formatter-client.test.mjs",
+    "test:editor": "node test/run-editor.cjs",
+    "build": "esbuild extension.js --bundle --platform=node --format=cjs --external:vscode --outfile=dist/extension.js",
+    "vscode:prepublish": "npm run build"
   },
   "contributes": {
     "languages": [
@@ -71,10 +74,16 @@
     "configuration": {
       "title": "Lispex",
       "properties": {
+        "lispex.path": {
+          "type": "string",
+          "default": "lispex",
+          "scope": "window",
+          "description": "Path to the Native Lispex executable used for language support and formatting. Reload the window after changing it."
+        },
         "lispex.format.executable": {
           "type": "string",
           "default": "lispex",
-          "description": "Path to the installed Native Lispex executable used for document formatting."
+          "description": "Existing executable setting, used for language support and formatting when lispex.path is not set. Reload the window after changing it."
         },
         "lispex.format.timeoutMs": {
           "type": "number",
@@ -85,5 +94,12 @@
         }
       }
     }
+  },
+  "dependencies": {
+    "vscode-languageclient": "8.1.0"
+  },
+  "devDependencies": {
+    "@vscode/test-electron": "3.1.0",
+    "esbuild": "0.28.2"
   }
 }

@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.3.0
+
+- Starts `lispex lsp` when you open a `.lspx` file. Native Lispex 1.21.2 or later
+  provides errors as you type, formatting, symbols, go to definition, and
+  completion and hover for built-ins.
+- Set `lispex.path` to choose the installed executable. Existing
+  `lispex.format.executable` settings continue to work.
+- If the language server cannot start, shows an installation link and keeps
+  formatting through `lispex fmt` when the installed executable supports it.
+
 ## 0.2.1
 
 - The extension details now introduce Lispex as a safe language for business
