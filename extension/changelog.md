@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1
+
+- The VS Code extension 0.3.1 links to the public repository.
+
 ## 0.3.0
 
 - Starts `lispex lsp` when you open a `.lspx` file. Native Lispex 1.21.2 or later

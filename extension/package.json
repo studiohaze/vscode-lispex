@@ -2,7 +2,7 @@
   "name": "lispex",
   "displayName": "Lispex",
   "description": "Lispex errors as you type, formatting, symbols, definitions, and built-in completion and hover.",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "publisher": "studiohaze",
   "author": "Studio Haze Inc.",
   "license": "Apache-2.0",
@@ -10,7 +10,7 @@
   "homepage": "https://www.lispex.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/clavef/lispex.git"
+    "url": "https://github.com/studiohaze/vscode-lispex"
   },
   "main": "./dist/extension.js",
   "activationEvents": [
